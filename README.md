@@ -4,6 +4,8 @@ Experiments with nix for reproducible machine learning environments starting wit
 
 Inspired by [fast.ai minimal dotfiles](https://github.com/fastai/dotfiles) that uses a [Bare Git Repository](https://www.atlassian.com/git/tutorials/dotfiles) to manage dotfiles in a root repository.
 
+David Przybilla has written good blog post that motivates using nix for "[Reproducibility with Nix](https://blog.devgenius.io/reproducibility-with-nix-991ad466c92e)" that makes a case for using Nix in AI/Data Science/Data Engineering. 
+
 ## Setup
 
 ### Install instructions for macOS.
@@ -28,6 +30,8 @@ experimental-features = nix-command flakes
 EOF
 ```
 
+- [Setting up Nix on macOS from scratch (incl. dotfiles via home-manager and Nix flakes](https://youtu.be/1dzgVkgQ5mE)
+  - [Sample dotfiles from this video](https://github.com/schickling/dotfiles)
 - [Discourse Thread on macOS config](https://discourse.nixos.org/t/simple-workable-config-for-m1-macbook-pro-monterey-12-0-1-with-nix-flakes-nix-darwin-and-home-manager/16834)
 - [Gist with example instructions](https://gist.github.com/jmatsushita/5c50ef14b4b96cb24ae5268dab613050)
 - [Nix Configurations for macOS and Linux based on Flakes](https://github.com/malob/nixpkgs)
