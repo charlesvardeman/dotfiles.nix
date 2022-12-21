@@ -30,6 +30,24 @@ experimental-features = nix-command flakes
 EOF
 ```
 
+Install [home manager](https://github.com/nix-community/home-manager) from [standalone instructions](https://nix-community.github.io/home-manager/index.html#sec-install-standalone).
+
+```bash
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+nix-channel --update
+```
+
+Not sure if updating the nix path is necessary on macOS, but followed instructions.
+```bash
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+```
+
+And finally the home manager install.
+```bash
+nix-shell '<home-manager>' -A install
+```
+
+
 - [Setting up Nix on macOS from scratch (incl. dotfiles via home-manager and Nix flakes](https://youtu.be/1dzgVkgQ5mE)
   - [Sample dotfiles from this video](https://github.com/schickling/dotfiles)
 - [Discourse Thread on macOS config](https://discourse.nixos.org/t/simple-workable-config-for-m1-macbook-pro-monterey-12-0-1-with-nix-flakes-nix-darwin-and-home-manager/16834)
