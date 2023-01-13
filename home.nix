@@ -7,28 +7,37 @@
   home.homeDirectory = "/Users/cvardema";
 
 # Packages to install
-  home.packages = [
-    # pkgs is the set of all packages in the default home.nix implementation
-    pkgs.tmux
-    pkgs.vim
-    pkgs.git
-    pkgs.jq
-    pkgs.universal-ctags
-    pkgs.bash
-    pkgs.direnv
+  home.packages = with pkgs; [
+    tmux
+    vim
+    jq
+    universal-ctags
   ];
+  
+  # Set build manpages for false on afs due to time out issues
+  manual.manpages.enable = false;
+  programs = {
+    git = {
+      enable = true;
+      lfs.enable = true;
 
+      difftastic = {
+        enable = true;
+        background = "dark";
+      };
 
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "22.11";
+      userName = "Charles Vardeman";
+      userEmail = "cvardema@gmail.com";
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+      extraConfig = {
+        init.defaultBranch = "master";
+        push.autoSetupRemote = true;
+      };
+    };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    
+  };
 }
