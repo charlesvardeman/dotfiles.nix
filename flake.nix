@@ -49,7 +49,7 @@
           home = {
             stateVersion = "22.11";
             username = "${username}";
-            homeDirectory = "/home/${username}";
+            homeDirectory = "/Users/${username}";
           };
         }
       ];
