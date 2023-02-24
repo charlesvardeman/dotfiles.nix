@@ -21,7 +21,7 @@
     PAGER = "less";
     EDITOR = "vim";
     PATH =
-      "/nix/var/nix/profiles/default/bin:/usr/local/go/bin:$HOME/.nix-profile/bin:$HOME/go/bin:$PATH";
+      "/nix/var/nix/profiles/default/bin:/opt/homebrew/bin:$HOME/.nix-profile/bin:$HOME/go/bin:$PATH";
     GOPATH = "$HOME/go";
     NIX_PATH = "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
     MANPAGER = "less -s -M +Gg";
