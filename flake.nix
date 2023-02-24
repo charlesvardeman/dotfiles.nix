@@ -8,6 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
     rnix-lsp.url = "github:nix-community/rnix-lsp";
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +33,7 @@
     ...
   }: let
     username = "cvardema";
-    system = "x86_64-darwin";
+    system = "aarch64-darwin";
 
     pkgs = import nixpkgs {
       inherit system;
